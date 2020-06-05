@@ -20,7 +20,7 @@ class App extends Component {
       <div>
         <Header user={user} />
         {
-          <Signup setUser={this.setUser}/>
+          !user && <Signup setUser={this.setUser}/>
         }
       </div>
     )
