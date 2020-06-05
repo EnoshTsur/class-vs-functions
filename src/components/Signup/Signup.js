@@ -1,45 +1,37 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Center from '../Center/Center'
 
-export default class Signup extends Component {
+export default function Signup({ setUser, }) {
 
-    state = {
-        name: '',
-        age: '',
-    }
+    const [name, setName,] = React.useState('')
+    const [age, setAge,] = React.useState('')
 
-    isValidInputs = () =>  this.state.name !== '' && this.state.age !== ''
+    const isValidInputs = () => name !== '' && age !== ''
 
-    render() {
+    return (
+        <Center>
+            <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={e => setName(e.target.value)}
+            />
 
-        const { setUser, } = this.props
-        const { name, age, } = this.state
+            <input
+                type="number"
+                placeholder="Age"
+                min="0"
+                max="120"
+                value={age}
+                onChange={e => setAge(e.target.value)}
+            />
 
-        return (
-            <Center>
-                <input 
-                    type="text"     
-                    placeholder="Name" 
-                    value={this.state.name}
-                    onChange={e => this.setState({ name: e.target.value })}
-                />
-                
-                <input 
-                    type="number" 
-                    placeholder="Age" 
-                    min="0" 
-                    max="120" 
-                    value={this.state.age}
-                    onChange={e => this.setState({ age: e.target.value })} 
-                />
-
-                <button
-                    disabled={!this.isValidInputs()}
-                    onClick={() => setUser({ name, age,  })}
-                >
-                    Signup
+            <button
+                disabled={!isValidInputs()}
+                onClick={() => setUser({ name, age, })}
+            >
+                Signup
                 </button>
-            </Center>
-        )
-    }
+        </Center>
+    )
 }

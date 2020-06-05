@@ -1,19 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Center extends Component {
+export default function Center({ children, }) {
 
-    render() {
-        return (
+    return (
+        <div style={{
+            display: 'inline',
+        }}>
             <div style={{
-                display: 'inline',
+                textAlign: 'center',
             }}>
-                <div style={{
-                    textAlign: 'center',
-                }}>
 
-                    {this.props.children}
-                </div>
+                {children}
             </div>
-        )
-    }
+        </div>
+    )
 }
+

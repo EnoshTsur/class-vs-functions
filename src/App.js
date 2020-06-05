@@ -1,35 +1,19 @@
-import React, { Component, } from 'react';
+import React from 'react';
 import Header from './components/Header/Header'
 import Signup from './components/Signup/Signup'
 
-// Enosh ahhahah!!!
 
-class App extends Component {
+export default function App () {
 
-  state = {
-    user: null
-  }
-
-  setUser = user => {
-    this.setState({ user, })
-  }
-
-  render() {
-
-    const { user, } = this.state
-
+  const [ user, setUser, ] = React.useState(null)
 
     return (
       <div>
         <Header user={user} />
         {
-          !user && <Signup setUser={this.setUser}/>
+          !user && <Signup setUser={setUser}/>
         }
       </div>
     )
-
-  }
-
 }
 
-export default App;
