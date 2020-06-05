@@ -2,6 +2,8 @@ import React, { Component, } from 'react';
 import Header from './components/Header/Header'
 import Signup from './components/Signup/Signup'
 
+// Enosh ahhahah!!!
+
 class App extends Component {
 
   state = {
@@ -15,6 +17,7 @@ class App extends Component {
   render() {
 
     const { user, } = this.state
+
 
     return (
       <div>
