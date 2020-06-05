@@ -4,10 +4,7 @@ import Header from './components/Header/Header'
 class App extends Component {
 
   state = {
-      user: {
-        name: "enosh",
-        city: 'eilat'
-      }
+      user: null
   }
 
   render() {

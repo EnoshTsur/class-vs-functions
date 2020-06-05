@@ -13,7 +13,7 @@ export default class Header extends Component {
                 <Center>
                     <h1>
                         {
-                            `Hello ${!!user ? user.name : 'gues, please signup!'}`
+                            `Hello ${!!user ? user.name : 'guest, please signup!'}`
                         }
                     </h1>
                 </Center>
