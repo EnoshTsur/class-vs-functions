@@ -12,6 +12,10 @@ export default function Signup({ setUser, }) {
     const nameInput = React.useRef()
     const ageInput = React.useRef()
 
+
+    const style = (error) =>  ({
+        border: error ? '1px solid red': '1px solid grey'
+    })
     
     function handleClick() {
         if(name === '') {
@@ -33,9 +37,7 @@ export default function Signup({ setUser, }) {
         <Center>
             <input
                 ref={nameInput}
-                style={{
-                    border: nameError ? '1px solid red': '1px solid grey'
-                }}
+                style={style(nameError)}
                 type="text"
                 placeholder="Name"
                 value={name}
@@ -47,9 +49,7 @@ export default function Signup({ setUser, }) {
 
             <input
                 ref={ageInput}
-                style={{
-                    border: ageError ? '1px solid red': '1px solid grey'
-                }}
+                style={style(ageError)}
                 type="number"
                 placeholder="Age"
                 min="0"
