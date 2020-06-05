@@ -11,7 +11,11 @@ export default class Header extends Component {
         return (
             <div>
                 <Center>
-
+                    <h1>
+                        {
+                            `Hello ${!!user ? user.name : 'gues, please signup!'}`
+                        }
+                    </h1>
                 </Center>
             </div>
         )
