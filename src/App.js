@@ -8,6 +8,10 @@ class App extends Component {
     user: null
   }
 
+  setUser = user => {
+    this.setState({ user, })
+  }
+
   render() {
 
     const { user, } = this.state
@@ -15,7 +19,7 @@ class App extends Component {
     return (
       <div>
         <Header user={user} />
-        <Signup />
+        <Signup setUser={this.setUser}/>
       </div>
     )
 

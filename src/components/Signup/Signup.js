@@ -7,7 +7,12 @@ export default class Signup extends Component {
         age: '',
     }
 
+    isValidInputs = () =>  this.state.name !== '' && this.state.age !== ''
+
     render() {
+
+        const { setUser, } = this.props
+
         return (
             <div>
                 <input 
@@ -26,7 +31,12 @@ export default class Signup extends Component {
                     onChange={e => this.setState({ age: e.target.value })} 
                 />
 
-                <button>Signup</button>
+                <button
+                    disabled={!this.isValidInputs()}
+                    onClick={() => setUser({ name:  this.state.name, age: this.state.age,  })}
+                >
+                    Signup
+                </button>
             </div>
         )
     }
