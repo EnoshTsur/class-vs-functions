@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Center from '../Center/Center'
 
 export default class Signup extends Component {
 
@@ -12,9 +13,10 @@ export default class Signup extends Component {
     render() {
 
         const { setUser, } = this.props
+        const { name, age, } = this.state
 
         return (
-            <div>
+            <Center>
                 <input 
                     type="text"     
                     placeholder="Name" 
@@ -33,11 +35,11 @@ export default class Signup extends Component {
 
                 <button
                     disabled={!this.isValidInputs()}
-                    onClick={() => setUser({ name:  this.state.name, age: this.state.age,  })}
+                    onClick={() => setUser({ name, age,  })}
                 >
                     Signup
                 </button>
-            </div>
+            </Center>
         )
     }
 }

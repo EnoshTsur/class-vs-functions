@@ -19,7 +19,9 @@ class App extends Component {
     return (
       <div>
         <Header user={user} />
-        <Signup setUser={this.setUser}/>
+        {
+          <Signup setUser={this.setUser}/>
+        }
       </div>
     )
 
