@@ -4,7 +4,7 @@ import Header from './components/Header/Header'
 class App extends Component {
 
   state = {
-      user: null
+    user: null
   }
 
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
 
     return (
       <div>
-       <Header user={user}/>
+        <Header user={user} />
       </div>
     )
 
